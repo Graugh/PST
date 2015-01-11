@@ -32,7 +32,7 @@ def test_calculate_omega_list(utilization_calc, f_list, alpha, expected_omega_li
 @pytest.mark.parametrize('alpha, delta, u, expected_u1', [[0.5, 0.25, 0.1, 0.32660],
                                                           [0.25, 0.2, 0.15, 0.24350]])
 def test_calculate_u1(utilization_calc, alpha, delta, u, expected_u1):
-    assert expected_u1 == utilization_calc.calculate_u1(alpha, delta, u)
+    assert expected_u1 == utilization_calc._calculate_u1(alpha, delta, u)
 
 @pytest.mark.parametrize('radiuses, omegas, alpha, delta, rho, u, expected_utilization', [[[0.5, 0.8, 1],
                                                                                            [0.5, 0.3, 0.2],
