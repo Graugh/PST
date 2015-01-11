@@ -22,5 +22,6 @@ class DataReader(object):
                     'Q' : self._get_variable_from_data_file('Q'),
                     'ro' : self._get_variable_from_data_file('ro'),
                     'alfa' : self._get_variable_from_data_file('alfa'),
-                    'u' : self._get_variable_from_data_file('u')
+                    'u' : self._get_variable_from_data_file('u'),
+                    'delta' : self._get_variable_from_data_file('delta')
                }
