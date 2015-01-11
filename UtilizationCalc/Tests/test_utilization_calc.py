@@ -22,3 +22,8 @@ def test_calculate_vector_of_radiuses(utilization_calc, min_radius, no_of_multic
                                                                    [[0.7, 1], 3, 0.1, [0.10955, 0.13265]]])
 def test_calculate_f_list(utilization_calc, radiuses, alpha, rho, expected_f_list):
     assert expected_f_list == utilization_calc.calculate_f_list(radiuses, alpha, rho)
+
+@pytest.mark.parametrize('f_list, alpha, expected_omega_list', [[[0.25, 0.5], 0.5, [0.2, 0.8]],
+                                                                [[0.7, 0.3, 0.5], 0.25, [0.77277, 0.02607, 0.20116]]])
+def test_calculate_omega_list(utilization_calc, f_list, alpha, expected_omega_list):
+    assert expected_omega_list == utilization_calc.calculate_omega_list(f_list, alpha)

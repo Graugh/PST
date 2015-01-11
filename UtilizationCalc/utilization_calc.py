@@ -18,3 +18,14 @@ class UtilizationCalc(object):
         for m in range(1, len(radiuses)):
             f.append(round(((radiuses[m] * radiuses[m] - radiuses[m - 1] * radiuses[m - 1])**alpha) * (radiuses[m]**((alpha - 1) * rho)), 5))
         return f
+
+    def calculate_omega_list(self, f_list, alpha):
+        omega_list = []
+        sum_of_powered_f = 0
+        for f in f_list:
+            sum_of_powered_f += f**(1/alpha)
+        for f in f_list:
+            omega_list.append(round((f**(1/alpha))/sum_of_powered_f, 5))
+        return omega_list
+
+
