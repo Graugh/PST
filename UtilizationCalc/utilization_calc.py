@@ -28,4 +28,7 @@ class UtilizationCalc(object):
             omega_list.append(round((f**(1/alpha))/sum_of_powered_f, 5))
         return omega_list
 
+    def calculate_u1(self, alpha, delta, u):
+        return round(u**(1-alpha) * (1 - delta**2)**(-alpha), 5)
+
 
