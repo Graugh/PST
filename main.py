@@ -1,10 +1,10 @@
 from DataReader.data_reader import DataReader
 from UtilizationCalc.utilization_calc import UtilizationCalc
+import sys
 
 data_reader = DataReader()
-data_reader.open_data_file_from_path("/var/fpwork/PST/data.dat")
+data_reader.open_data_file_from_path(sys.argv[1])
 data = data_reader.create_data_dict()
-
 utilization_calc = UtilizationCalc()
 M = utilization_calc.calculate_M(data['N'], data['K'], data['Q'])
 R = utilization_calc.calculate_vector_of_radiuses(data['delta'], M)
