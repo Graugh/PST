@@ -11,3 +11,10 @@ class UtilizationCalc(object):
             radiuses.append(round(math.sqrt(delta * delta + m * ((1 - delta * delta)/no_of_multicasts)), 5))
         radiuses.append(1)
         return radiuses
+
+    def calculate_f_list(self, radiuses, alpha, rho):
+        f = []
+        radiuses.insert(0, 0)
+        for m in range(1, len(radiuses)):
+            f.append(round(((radiuses[m] * radiuses[m] - radiuses[m - 1] * radiuses[m - 1])**alpha) * (radiuses[m]**((alpha - 1) * rho)), 5))
+        return f
