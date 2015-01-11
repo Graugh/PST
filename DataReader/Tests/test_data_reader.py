@@ -1,6 +1,7 @@
 import pytest
 from DataReader.data_reader import DataReader
 
+
 @pytest.fixture
 def data_reader():
     return DataReader()
