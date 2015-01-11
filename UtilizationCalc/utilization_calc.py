@@ -31,4 +31,12 @@ class UtilizationCalc(object):
     def calculate_u1(self, alpha, delta, u):
         return round(u**(1-alpha) * (1 - delta**2)**(-alpha), 5)
 
+    def calculate_utilization(self, radiuses, omegas, alpha, delta, rho, u):
+        sum = 0
+        radiuses.insert(0, 0)
+        for m in range(1, len(radiuses)):
+            sum += (radiuses[m]**2 - radiuses[m - 1]**2)**alpha * radiuses[m]**(rho * (alpha - 1)) * omegas[m - 1]**(1 - alpha)
+        u1 = self.calculate_u1(alpha, delta, u)
+        return round(sum * (u1/(1 - alpha)), 5)
+
 
