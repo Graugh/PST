@@ -14,7 +14,7 @@ def test_open_data_file(data_reader):
                                                            ['alfa', 1.4]])
 def test_get_variable_from_data_file(data_reader, variable_name, variable_value):
     data_reader.open_data_file_from_path("/var/fpwork/PST/DataReader/Tests/test_example.dat")
-    assert data_reader.get_variable_from_data_file(variable_name) == variable_value
+    assert data_reader._get_variable_from_data_file(variable_name) == variable_value
 
 def test_create_data_dict(data_reader):
     data_reader.open_data_file_from_path("/var/fpwork/PST/DataReader/Tests/test_example.dat")
