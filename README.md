@@ -17,3 +17,4 @@ Program takes N, K, Q, ro, alfa, u and delta as mandatory parameters, so you can
 To run the program simply run from command line:
 
 python main.py /path/to/your/dat/file.dat
+
