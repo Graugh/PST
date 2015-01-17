@@ -9,7 +9,7 @@ class DataReader(object):
         self.data_file = open(path, 'r')
 
     def _search_for_equation_with_given_variable_in_string(self, variable_name, string):
-        return re.search('%s=[\d|\.]*'%variable_name, string)
+        return re.search('%s\W*=\W*[\d|\.]*'%variable_name, string)
 
     def _search_for_value_of_equation(self, equation):
         return float(re.search('[\d|\.]+$', equation).group(0))
